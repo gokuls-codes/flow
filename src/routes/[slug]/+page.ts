@@ -4,7 +4,8 @@ import type { PageLoad } from './$types';
 // use PageServerLoad for +page.server.ts
 // use LayoutLoad for +layout.ts
 // use LayoutServerLoad for +layout.server.ts
-export const load: PageLoad = ({ params }) => {
+export const load: PageLoad = ({ params, route }) => {
+	console.log('route', route);
 	if (params.slug === 'hello-world') {
 		return {
 			title: 'Hello world!',
